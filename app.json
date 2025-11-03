@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "Dharman-Claude-Code",
-    "slug": "Dharman-Claude-Code",
+    "name": "Fitness Tracker",
+    "slug": "fitness-tracker-ptbr",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0F0F0F"
     },
     "ios": {
       "supportsTablet": true
