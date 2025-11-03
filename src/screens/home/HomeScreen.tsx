@@ -9,23 +9,42 @@ import { formatWater, formatSteps } from '../../utils/formatters';
 import { calculateProgressPercentage } from '../../services/calculations';
 import { FoodCard } from '../../components/cards/FoodCard';
 import { ActivityCard } from '../../components/cards/ActivityCard';
+import { WaterLogModal } from '../modals/WaterLogModal';
+import { StepsInputModal } from '../modals/StepsInputModal';
+import { useWaterLogs } from '../../hooks/useWaterLogs';
 
 const HomeScreen: React.FC = () => {
-  // Mock data - replace with actual hooks later
+  // Mock user ID - replace with actual user authentication
+  const userId = 'user-1';
+
+  // Water tracking with real hook
+  const { totalWater, addWaterLog } = useWaterLogs(userId);
+  const [waterModalVisible, setWaterModalVisible] = useState(false);
+  const goalWater = 3500;
+
+  // Steps tracking
+  const [stepsModalVisible, setStepsModalVisible] = useState(false);
+  const [currentSteps, setCurrentSteps] = useState(0);
+  const goalSteps = 8000;
+
+  // Food tracking - mock data for now
   const [currentCalories] = useState(0);
   const [goalCalories] = useState(1725);
   const [protein] = useState(0);
   const [carbs] = useState(0);
   const [fat] = useState(0);
 
-  const [currentWater] = useState(0);
-  const [goalWater] = useState(3500);
-
-  const [currentSteps] = useState(3016);
-  const [goalSteps] = useState(8000);
-
-  const waterProgress = calculateProgressPercentage(currentWater, goalWater);
+  const waterProgress = calculateProgressPercentage(totalWater, goalWater);
   const stepsProgress = calculateProgressPercentage(currentSteps, goalSteps);
+
+  const handleAddWater = (ml: number) => {
+    addWaterLog(ml);
+  };
+
+  const handleUpdateSteps = (steps: number) => {
+    setCurrentSteps(steps);
+    setStepsModalVisible(false);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -60,20 +79,35 @@ const HomeScreen: React.FC = () => {
         <View style={styles.activityGrid}>
           <ActivityCard
             icon="💧"
-            value={formatWater(currentWater, goalWater)}
+            value={formatWater(totalWater, goalWater)}
             gradientColors={colors.gradients.water}
             progress={waterProgress}
-            onPress={() => console.log('Open water modal')}
+            onPress={() => setWaterModalVisible(true)}
           />
           <ActivityCard
             icon="👟"
             value={formatSteps(currentSteps, goalSteps)}
             gradientColors={colors.gradients.steps}
             progress={stepsProgress}
-            onPress={() => console.log('Open steps modal')}
+            onPress={() => setStepsModalVisible(true)}
           />
         </View>
       </ScrollView>
+
+      <WaterLogModal
+        visible={waterModalVisible}
+        onClose={() => setWaterModalVisible(false)}
+        onLog={handleAddWater}
+        currentTotal={totalWater}
+        goalTotal={goalWater}
+      />
+
+      <StepsInputModal
+        visible={stepsModalVisible}
+        onClose={() => setStepsModalVisible(false)}
+        onSave={handleUpdateSteps}
+        currentSteps={currentSteps}
+      />
     </SafeAreaView>
   );
 };

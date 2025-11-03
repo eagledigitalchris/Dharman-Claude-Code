@@ -10,16 +10,20 @@ interface WaterLogModalProps {
   visible: boolean;
   onClose: () => void;
   onLog: (ml: number) => void;
+  currentTotal: number;
+  goalTotal: number;
 }
 
 export const WaterLogModal: React.FC<WaterLogModalProps> = ({
   visible,
   onClose,
   onLog,
+  currentTotal,
+  goalTotal,
 }) => {
-  const handleLog = (ml: number) => {
-    onLog(ml);
-    onClose();
+  const handleLog = () => {
+    onLog(500);
+    // NÃO fecha o modal, deixa o usuário adicionar mais
   };
 
   return (
@@ -32,43 +36,25 @@ export const WaterLogModal: React.FC<WaterLogModalProps> = ({
       <View style={styles.overlay}>
         <View style={styles.content}>
           <View style={styles.header}>
-            <Text style={styles.title}>💧 Adicionar Água</Text>
+            <Text style={styles.title}>💧 Registro de Água</Text>
             <TouchableOpacity onPress={onClose}>
               <Ionicons name="close" size={24} color={colors.text.primary} />
             </TouchableOpacity>
           </View>
 
-          <Text style={styles.subtitle}>Quanto você bebeu?</Text>
-
-          <View style={styles.buttonGroup}>
-            <Button
-              title="+ 250 ml"
-              onPress={() => handleLog(250)}
-              variant="outline"
-              style={styles.button}
-            />
-            <Button
-              title="+ 500 ml"
-              onPress={() => handleLog(500)}
-              variant="outline"
-              style={styles.button}
-            />
+          <View style={styles.totalContainer}>
+            <Text style={styles.totalLabel}>Total de Hoje</Text>
+            <Text style={styles.totalValue}>
+              {currentTotal.toLocaleString('pt-BR')} / {goalTotal.toLocaleString('pt-BR')} ml
+            </Text>
           </View>
 
-          <View style={styles.buttonGroup}>
-            <Button
-              title="+ 750 ml"
-              onPress={() => handleLog(750)}
-              variant="outline"
-              style={styles.button}
-            />
-            <Button
-              title="+ 1000 ml"
-              onPress={() => handleLog(1000)}
-              variant="outline"
-              style={styles.button}
-            />
-          </View>
+          <Button
+            title="+ 500 ml"
+            onPress={handleLog}
+            variant="primary"
+            style={styles.addButton}
+          />
 
           <Button
             title={pt_BR.common.close}
@@ -99,27 +85,35 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 16,
+    marginBottom: 24,
   },
   title: {
     ...typography.title,
     color: colors.text.primary,
     fontWeight: '600',
   },
-  subtitle: {
-    ...typography.body,
-    color: colors.text.secondary,
+  totalContainer: {
+    backgroundColor: colors.background,
+    padding: 20,
+    borderRadius: 16,
+    alignItems: 'center',
     marginBottom: 24,
   },
-  buttonGroup: {
-    flexDirection: 'row',
-    gap: 12,
-    marginBottom: 12,
+  totalLabel: {
+    ...typography.caption,
+    color: colors.text.secondary,
+    marginBottom: 8,
   },
-  button: {
-    flex: 1,
+  totalValue: {
+    ...typography.title,
+    color: colors.text.primary,
+    fontWeight: '700',
+  },
+  addButton: {
+    marginBottom: 12,
+    minHeight: 60,
   },
   closeButton: {
-    marginTop: 12,
+    marginTop: 4,
   },
 });
