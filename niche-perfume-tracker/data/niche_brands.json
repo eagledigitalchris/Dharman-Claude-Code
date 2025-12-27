@@ -1,0 +1,138 @@
+{
+  "niche_brands": [
+    {"name": "Amouage", "country": "Oman", "price_range": "high", "founded": 1983},
+    {"name": "Boadicea the Victorious", "country": "UK", "price_range": "ultra_high", "founded": 2008},
+    {"name": "Bond No. 9", "country": "USA", "price_range": "high", "founded": 2003},
+    {"name": "Byredo", "country": "Sweden", "price_range": "high", "founded": 2006},
+    {"name": "Clive Christian", "country": "UK", "price_range": "ultra_high", "founded": 1999},
+    {"name": "Creed", "country": "UK", "price_range": "high", "founded": 1760},
+    {"name": "Diptyque", "country": "France", "price_range": "medium", "founded": 1961},
+    {"name": "Frederic Malle", "country": "France", "price_range": "high", "founded": 2000},
+    {"name": "Initio", "country": "France", "price_range": "high", "founded": 2015},
+    {"name": "Kilian", "country": "France", "price_range": "high", "founded": 2007},
+    {"name": "Le Labo", "country": "USA", "price_range": "high", "founded": 2006},
+    {"name": "Maison Francis Kurkdjian", "country": "France", "price_range": "high", "founded": 2009},
+    {"name": "Mancera", "country": "France", "price_range": "medium", "founded": 2008},
+    {"name": "Memo Paris", "country": "France", "price_range": "high", "founded": 2007},
+    {"name": "Montale", "country": "France", "price_range": "medium", "founded": 2003},
+    {"name": "Nishane", "country": "Turkey", "price_range": "high", "founded": 2012},
+    {"name": "Ormonde Jayne", "country": "UK", "price_range": "high", "founded": 2002},
+    {"name": "Parfums de Marly", "country": "France", "price_range": "high", "founded": 2009},
+    {"name": "Penhaligon's", "country": "UK", "price_range": "high", "founded": 1870},
+    {"name": "Roja Parfums", "country": "UK", "price_range": "ultra_high", "founded": 2011},
+    {"name": "Serge Lutens", "country": "France", "price_range": "high", "founded": 2000},
+    {"name": "Tiziana Terenzi", "country": "Italy", "price_range": "high", "founded": 2010},
+    {"name": "Tom Ford Private Blend", "country": "USA", "price_range": "high", "founded": 2007},
+    {"name": "Xerjoff", "country": "Italy", "price_range": "high", "founded": 2003},
+    {"name": "Acqua di Parma", "country": "Italy", "price_range": "medium", "founded": 1916},
+    {"name": "House of Oud", "country": "Italy", "price_range": "high", "founded": 2015},
+    {"name": "Nasomatto", "country": "Netherlands", "price_range": "high", "founded": 2007},
+    {"name": "Orto Parisi", "country": "Italy", "price_range": "high", "founded": 2013},
+    {"name": "BDK Parfums", "country": "France", "price_range": "medium", "founded": 2016}
+  ],
+  "stores": [
+    {
+      "name": "FragranceX",
+      "slug": "fragrancex",
+      "url": "https://fragrancex.com",
+      "country": "USA",
+      "discount_range": "30-50%",
+      "shipping": "Free over $35",
+      "notes": "Largest catalog of discounted fragrances"
+    },
+    {
+      "name": "FragranceNet",
+      "slug": "fragrancenet",
+      "url": "https://fragrancenet.com",
+      "country": "USA",
+      "discount_range": "35-60%",
+      "shipping": "Free over $59",
+      "notes": "Wide variety, frequent sales"
+    },
+    {
+      "name": "MaxAroma",
+      "slug": "maxaroma",
+      "url": "https://maxaroma.com",
+      "country": "USA",
+      "discount_range": "20-40%",
+      "shipping": "Free over $99",
+      "notes": "Focus on niche brands"
+    },
+    {
+      "name": "Jomashop",
+      "slug": "jomashop",
+      "url": "https://jomashop.com",
+      "country": "USA",
+      "discount_range": "15-35%",
+      "shipping": "Free over $100",
+      "notes": "Luxury goods retailer, authentic products"
+    },
+    {
+      "name": "Venba Fragrance",
+      "slug": "venba",
+      "url": "https://venbafragrance.com",
+      "country": "USA",
+      "discount_range": "25-45%",
+      "shipping": "Free over $150",
+      "notes": "Exclusive niche selections"
+    },
+    {
+      "name": "Olfactory Factory",
+      "slug": "olfactory",
+      "url": "https://olfactoryfactoryllc.com",
+      "country": "USA",
+      "discount_range": "30-50%",
+      "shipping": "Free over $75",
+      "notes": "Great discounts on testers"
+    },
+    {
+      "name": "FragranceBuy",
+      "slug": "fragrancebuy",
+      "url": "https://fragrancebuy.ca",
+      "country": "Canada",
+      "discount_range": "20-35%",
+      "shipping": "Free over $100 CAD",
+      "notes": "Canadian retailer, ships to US"
+    },
+    {
+      "name": "Aura Fragrances",
+      "slug": "aurafragrances",
+      "url": "https://aurafragrances.com",
+      "country": "USA",
+      "discount_range": "40-60%",
+      "shipping": "Free over $50",
+      "notes": "Specializes in testers"
+    },
+    {
+      "name": "Niche Gallery",
+      "slug": "nichegallery",
+      "url": "https://nichegallerie.com",
+      "country": "USA",
+      "discount_range": "30-70%",
+      "shipping": "Free over $100",
+      "notes": "Up to 70% off niche fragrances"
+    },
+    {
+      "name": "Perfume Online",
+      "slug": "perfumeonline",
+      "url": "https://perfumeonline.ca",
+      "country": "Canada",
+      "discount_range": "25-40%",
+      "shipping": "Free over $75 CAD",
+      "notes": "House of Oud specialist"
+    }
+  ],
+  "price_ranges": {
+    "low": {"min": 0, "max": 100, "label": "Budget"},
+    "medium": {"min": 100, "max": 250, "label": "Mid-Range"},
+    "high": {"min": 250, "max": 500, "label": "Premium"},
+    "ultra_high": {"min": 500, "max": null, "label": "Ultra-Luxury"}
+  },
+  "concentrations": [
+    {"code": "EDC", "name": "Eau de Cologne", "concentration": "2-5%", "longevity": "1-2 hours"},
+    {"code": "EDT", "name": "Eau de Toilette", "concentration": "5-15%", "longevity": "3-4 hours"},
+    {"code": "EDP", "name": "Eau de Parfum", "concentration": "15-20%", "longevity": "5-8 hours"},
+    {"code": "PARFUM", "name": "Parfum", "concentration": "20-30%", "longevity": "8-12 hours"},
+    {"code": "EXTRAIT", "name": "Extrait de Parfum", "concentration": "30-40%", "longevity": "12+ hours"}
+  ]
+}
