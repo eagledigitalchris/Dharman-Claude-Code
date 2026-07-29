@@ -11,6 +11,7 @@
     "deploy": "chmod +x deploy.sh && ./deploy.sh"
   },
   "dependencies": {
+    "@expo/vector-icons": "^15.1.1",
     "@react-native-async-storage/async-storage": "^1.24.0",
     "@react-navigation/bottom-tabs": "^7.7.3",
     "@react-navigation/native": "^7.1.19",

@@ -96,7 +96,12 @@ export type RootStackParamList = {
 
 export type MainTabParamList = {
   Home: undefined;
-  Explore: undefined;
+  Peptides: undefined;
   Messages: undefined;
   Progress: undefined;
+};
+
+export type PeptidesStackParamList = {
+  PeptidesHome: undefined;
+  PeptideForm: { id?: string } | undefined;
 };

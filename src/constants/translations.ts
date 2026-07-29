@@ -37,6 +37,7 @@ export const pt_BR = {
   navigation: {
     home: 'Home',
     explore: 'Explorar',
+    peptides: 'Peptídeos',
     messages: 'Mensagens',
     progress: 'Progresso',
   },

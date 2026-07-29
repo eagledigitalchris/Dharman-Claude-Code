@@ -9,6 +9,7 @@ import { MainTabParamList } from '../types';
 import HomeScreen from '../screens/home/HomeScreen';
 import ProgressScreen from '../screens/progress/ProgressScreen';
 import PlaceholderScreen from '../screens/PlaceholderScreen';
+import { PeptidesNavigator } from './PeptidesNavigator';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
@@ -47,12 +48,13 @@ export const BottomTabNavigator: React.FC = () => {
         }}
       />
       <Tab.Screen
-        name="Explore"
-        component={PlaceholderScreen}
+        name="Peptides"
+        component={PeptidesNavigator}
         options={{
-          title: pt_BR.navigation.explore,
+          title: pt_BR.navigation.peptides,
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="compass" size={size} color={color} />
+            <Ionicons name="flask" size={size} color={color} />
           ),
         }}
       />
