@@ -104,4 +104,5 @@ export type MainTabParamList = {
 export type PeptidesStackParamList = {
   PeptidesHome: undefined;
   PeptideForm: { id?: string } | undefined;
+  PeptideAjustes: undefined;
 };

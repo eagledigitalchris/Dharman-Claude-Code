@@ -61,13 +61,22 @@ const PeptidesHomeScreen: React.FC = () => {
           <Text style={styles.title}>Peptídeos</Text>
           <Text style={styles.date}>{formatISOForHuman(today)}</Text>
         </View>
-        <TouchableOpacity
-          style={styles.addBtn}
-          onPress={() => navigation.navigate('PeptideForm', {})}
-          activeOpacity={0.8}
-        >
-          <Ionicons name="add" size={26} color={colors.text.primary} />
-        </TouchableOpacity>
+        <View style={styles.headerActions}>
+          <TouchableOpacity
+            style={styles.iconBtn}
+            onPress={() => navigation.navigate('PeptideAjustes')}
+            activeOpacity={0.8}
+          >
+            <Ionicons name="settings-outline" size={22} color={colors.text.primary} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.addBtn}
+            onPress={() => navigation.navigate('PeptideForm', {})}
+            activeOpacity={0.8}
+          >
+            <Ionicons name="add" size={26} color={colors.text.primary} />
+          </TouchableOpacity>
+        </View>
       </View>
 
       <Segmented options={TABS} value={tab} onChange={setTab} />
@@ -122,6 +131,21 @@ const styles = StyleSheet.create({
     color: colors.text.secondary,
     marginTop: 2,
     textTransform: 'capitalize',
+  },
+  headerActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  iconBtn: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: colors.cardBackground,
+    borderWidth: 1,
+    borderColor: colors.border,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   addBtn: {
     width: 44,
