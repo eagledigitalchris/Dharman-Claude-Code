@@ -29,17 +29,21 @@ export function configurePWA(): void {
     el.setAttribute('href', href);
   };
 
+  // Caminhos relativos para funcionar tanto na raiz (Vercel) quanto em
+  // subpasta (GitHub Pages: /Dharman-Claude-Code/).
+  const base = document.baseURI.replace(/[^/]*$/, ''); // diretório atual
+
   document.title = 'Protocolo Peptídeos';
   ensureMeta('theme-color', '#0F0F0F');
   ensureMeta('mobile-web-app-capable', 'yes');
   ensureMeta('apple-mobile-web-app-capable', 'yes');
   ensureMeta('apple-mobile-web-app-status-bar-style', 'black-translucent');
   ensureMeta('apple-mobile-web-app-title', 'Peptídeos');
-  ensureLink('manifest', '/manifest.json');
-  ensureLink('apple-touch-icon', '/apple-touch-icon.png');
+  ensureLink('manifest', `${base}manifest.json`);
+  ensureLink('apple-touch-icon', `${base}apple-touch-icon.png`);
 
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').catch(() => {
+    navigator.serviceWorker.register(`${base}sw.js`).catch(() => {
       /* ignora falha de registro do SW */
     });
   }
